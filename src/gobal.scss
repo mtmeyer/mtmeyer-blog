@@ -1,0 +1,53 @@
+body {
+	background-color: #1e1f28;
+	color: #ffffff;
+	background-image: url('/background-image.svg');
+	background-attachment: fixed;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	font-family: 'Source Serif Pro', serif;
+}
+
+.svelte-wrapper {
+	width: 650px;
+}
+
+h1 {
+	font-family: 'Catamaran', sans-serif;
+	font-size: 42px;
+}
+
+a {
+	color: #fc7373;
+	text-decoration: underline;
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+p,
+ul,
+ol {
+	font-weight: 400;
+	color: rgba(255, 255, 255, 0.85);
+	font-size: 16px;
+	line-height: 24px;
+}
+
+p {
+	margin: 32px 0;
+}
+
+code {
+	background-color: rgba(255, 255, 255, 0.1);
+	border-radius: 2px;
+	padding: 2px 4px;
+}
+
+blockquote {
+	border-left: 2px solid #fc7373;
+	padding-left: 16px;
+	margin-left: 24px;
+}

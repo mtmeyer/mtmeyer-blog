@@ -5,8 +5,10 @@ body {
 	background-attachment: fixed;
 	display: flex;
 	justify-content: center;
-	width: 100%;
+	width: calc(100% - 48px);
 	font-family: 'Source Serif Pro', serif;
+	padding: 0 24px;
+	margin: 0;
 }
 
 .svelte-wrapper {
@@ -50,4 +52,19 @@ blockquote {
 	border-left: 2px solid #fc7373;
 	padding-left: 16px;
 	margin-left: 24px;
+}
+
+@media screen and (max-width: 650px) {
+  .svelte-wrapper {
+		width: 100%;
+	}
+
+	blockquote {
+		margin-left: 8px;
+		padding-left: 8px;
+	}
+
+	p {
+		margin: 16px 0;
+	}
 }

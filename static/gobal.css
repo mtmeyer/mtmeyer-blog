@@ -21,10 +21,10 @@ h1 {
 a {
 	color: #fc7373;
 	text-decoration: underline;
+}
 
-	&:hover {
-		text-decoration: none;
-	}
+a:hover {
+	text-decoration: none;
 }
 
 p,

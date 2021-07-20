@@ -26,8 +26,13 @@
 	export let posts;
 </script>
 
+<svelte:head>
+	<title>Dev Blog</title>
+</svelte:head>
+
 <main>
-	<Header homepage={true} />
+	<Header homepage={true} title="Dev Blog" />
+	<h3>Test</h3>
 	<section class="post-wrapper">
 		{#each posts as item}
 			<article>

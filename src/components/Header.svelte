@@ -1,6 +1,11 @@
 <script>
 	export let homepage = false;
+	export let title = '';
 </script>
+
+<svelte:head>
+	<title>{title}</title>
+</svelte:head>
 
 <header>
 	<a href="/" class:homepage> <h1 class:homepage>Dev Blog</h1></a>

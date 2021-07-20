@@ -7,7 +7,7 @@ description: Some sort of description
   import Header from '../../components/Header.svelte';
 </script>
 
-<Header />
+<Header title={title}/>
 
 # {title}
 

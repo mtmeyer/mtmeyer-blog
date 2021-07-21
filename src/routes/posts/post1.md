@@ -5,6 +5,14 @@ description: Some sort of description
 
 <script>
   import Header from '../../components/Header.svelte';
+  import CodeBlock from '../../components/CodeBlock.svelte';
+
+  let testCode = `
+
+  let fruit = 'Guava';
+  console.log(fruit);
+  `
+  
 </script>
 
 <Header title={title}/>
@@ -20,7 +28,9 @@ filters -- including [Setext](http://docutils.sourceforge.net/mirror/setext.html
 [Grutatext](http://www.triptico.com/software/grutatxt.html), and [EtText](http://ettext.taint.org/doc/) -- the single biggest source of
 inspiration for Markdown's syntax is the format of plain text email.
 
-## Block Elements
+## Code blocks
+
+<CodeBlock code={testCode} />
 
 ### Paragraphs and Line Breaks
 

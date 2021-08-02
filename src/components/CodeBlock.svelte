@@ -14,5 +14,6 @@
 <style>
 	.code-wrapper {
 		padding-top: 15px;
+		padding-left: 24px;
 	}
 </style>

@@ -37,7 +37,7 @@
 		{#each posts as item}
 			<article>
 				<a href={item.path} class="preview-wrapper">
-					<time>1 June, 2021</time>
+					<time>{item.metadata.publishDate}</time>
 					<h2>{item.metadata.title}</h2>
 					<p>{item.metadata.description}</p>
 				</a>
@@ -63,6 +63,8 @@
 			font-family: 'Catamaran', sans-serif;
 			font-size: 32px;
 			margin: 0;
+			line-height: 42px;
+			margin-bottom: 8px;
 		}
 
 		p {

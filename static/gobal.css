@@ -9,6 +9,7 @@ body {
 	font-family: 'Source Serif Pro', serif;
 	padding: 0 24px;
 	margin: 0;
+	padding-bottom: 64px;
 }
 
 .svelte-wrapper {
@@ -18,6 +19,7 @@ body {
 h1 {
 	font-family: 'Catamaran', sans-serif;
 	font-size: 42px;
+	line-height: 52px;
 }
 
 a {
@@ -50,8 +52,14 @@ code {
 
 blockquote {
 	border-left: 2px solid #fc7373;
-	padding-left: 16px;
+	padding: 1px 16px 1px 16px;
 	margin-left: 24px;
+	background-color: rgba(255, 255, 255, 0.06);
+}
+
+hr {
+	margin: 40px 0;
+	border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 @media screen and (max-width: 650px) {
@@ -66,5 +74,9 @@ blockquote {
 
 	p {
 		margin: 16px 0;
+	}
+
+	hr {
+		margin: 24px 0;
 	}
 }

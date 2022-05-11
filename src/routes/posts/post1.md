@@ -1,299 +1,77 @@
 ---
-title: Post 1 - test
-description: Some sort of description
+title: Figma auto layout makes building react components easier
+description: Since using auto layout in Figma a bunch, I've realised designing everything with it simplifies component creation in React.
+publishDate: 25 July, 2021
 ---
 
 <script>
   import Header from '../../components/Header.svelte';
+
   import CodeBlock from '../../components/CodeBlock.svelte';
 
   let testCode = `
 
-  let fruit = 'Guava';
-  console.log(fruit);
+<div className="card-wrapper">
+  <div className="header">
+    <h1>Card Heading</h1>
+    <img src="chevron.svg" />
+  </div>
+  <p>Description</p>
+  <div className="metadata">
+    <div className="author">
+      <img src="avatar-image.svg"/>
+      <p>Joanna Smith</p>
+    </div>
+    <time>3:10pm</time>
+  </div>
+</div>
   `
-  
 </script>
 
 <Header title={title}/>
 
 # {title}
 
-Markdown is intended to be as easy-to-read and easy-to-write as is feasible.Readability, however, is emphasized above all else. A Markdown-formatted
-document should be publishable as-is, as plain text, without looking
-like it's been marked up with tags or formatting instructions.
+Since Figma released 'Auto Layout' in late 2019, I've found myself using it more and more to the point that now, I rarely use groups, or even regular frames. There are a bunch of reasons I think designers should adopt it into their workflow, from efficiency to streamlining working with content writers and more.
 
-While Markdown's syntax has been influenced by several existing text-to-HTML
-filters -- including [Setext](http://docutils.sourceforge.net/mirror/setext.html), [atx](http://www.aaronsw.com/2002/atx/), [Textile](http://textism.com/tools/textile/), [reStructuredText](http://docutils.sourceforge.net/rst.html),
-[Grutatext](http://www.triptico.com/software/grutatxt.html), and [EtText](http://ettext.taint.org/doc/) -- the single biggest source of
-inspiration for Markdown's syntax is the format of plain text email.
+However, if you're the type to create side projects, designing and developing them yourself, I think there is another, somewhat less tangible benfit to using auto layout in your designs.
 
-## Code blocks
+I think using auto layout during the design process, makes building React components quicker.
 
-<CodeBlock code={testCode} />
+## But how though?
 
-### Paragraphs and Line Breaks
+> How could a feature in a design tool have any impact on writing React components?
 
-A paragraph is simply one or more consecutive lines of text, separated
-by one or more blank lines. (A blank line is any line that looks like a
-blank line -- a line containing nothing but spaces or tabs is considered
-blank.) Normal paragraphs should not be indented with spaces or tabs.
+It's worth pointing out that I don't think auto layout has any tangible impact on _how_ I write components, only the speed at which I can put them together.
 
-The implication of the "one or more consecutive lines of text" rule is
-that Markdown supports "hard-wrapped" text paragraphs. This differs
-significantly from most other text-to-HTML formatters (including Movable
-Type's "Convert Line Breaks" option) which translate every line break
-character in a paragraph into a `<br />` tag.
+What designing with auto layout forces me to do is think about the eventual structure of the JSX markup. In most ways (not all), auto layout containers can be considered a `<div>`. As such the structure of your commponent in Figma, is likely to match the code markup to a good degree.
 
-When you _do_ want to insert a `<br />` break tag using Markdown, you
-end a line with two or more spaces, then type return.
+While I don't tend to refer to the Figma layers when actually building a component, I already have a good idea going into development which items need to be grouped together to achieve the layout. By using auto layout, is shifting the thinking about layout markup structure into the design phase.
 
-### Headers
+Lets take a simple card as an example:
 
-Markdown supports two styles of headers, [Setext] [1] and [atx] [2].
+<div style='width: 100%; background-color: rgba(255, 255, 255, 0.06); padding: 16px 0; display: flex; justify-content: center'>
+<img src="/img/card-example.svg" alt="Card example"/>
+</div>
 
-Optionally, you may "close" atx-style headers. This is purely
-cosmetic -- you can use this if you think it looks better. The
-closing hashes don't even need to match the number of hashes
-used to open the header. (The number of opening hashes
-determines the header level.)
+Looking at a comparison of the JSX markup to the layers in Figma, there is quite a similarity, bearing in mind that Figma displays layers in reverse order to how they would be marked up in code:
 
-### Blockquotes
+### Figma layers
 
-Markdown uses email-style `>` characters for blockquoting. If you're
-familiar with quoting passages of text in an email message, then you
-know how to create a blockquote in Markdown. It looks best if you hard
-wrap the text and put a `>` before every line:
+<div style='width: 100%; background-color: rgba(255, 255, 255, 0.06); padding: 16px 0; display: flex; justify-content: center'>
+<img src="/img/figma-layer-example.png" alt="Example of Figma layers" width="50%" />
+</div>
 
-> This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
-> consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
-> Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
->
-> Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
-> id sem consectetuer libero luctus adipiscing.
+### JSX Markup
 
-Markdown allows you to be lazy and only put the `>` before the first
-line of a hard-wrapped paragraph:
+<CodeBlock code={testCode} language="html" />
 
-> This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
-> consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
-> Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
+---
 
-> Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
-> id sem consectetuer libero luctus adipiscing.
+## Why should I care?
 
-Blockquotes can be nested (i.e. a blockquote-in-a-blockquote) by
-adding additional levels of `>`:
+To be clear, I don't see this as being the only benefit to using auto layout for developers that love building side projects. I just see this as another reason to adopt it and integrate it into the design workflow.
 
-> This is the first level of quoting.
->
-> > This is nested blockquote.
->
-> Back to the first level.
+Even in the prototyping phase, I've found auto layout incredibly useful in creating a bunch of different versions of the same component, without the need to worry as much about padding and spacing. It's also nice being able to use values to space and pad things rather than moving them around and having to check how far away they are from another element. You then know that if the element above grows by 20 pixels, everything below will shift.
 
-Blockquotes can contain other Markdown elements, including headers, lists,
-and code blocks:
-
-> ## This is a header.
->
-> 1.  This is the first list item.
-> 2.  This is the second list item.
->
-> Here's some example code:
->
->     return shell_exec("echo $input | $markdown_script");
-
-Any decent text editor should make email-style quoting easy. For
-example, with BBEdit, you can make a selection and choose Increase
-Quote Level from the Text menu.
-
-### Lists
-
-Markdown supports ordered (numbered) and unordered (bulleted) lists.
-
-Unordered lists use asterisks, pluses, and hyphens -- interchangably
--- as list markers:
-
-- Red
-- Green
-- Blue
-
-is equivalent to:
-
-- Red
-- Green
-- Blue
-
-and:
-
-- Red
-- Green
-- Blue
-
-Ordered lists use numbers followed by periods:
-
-1.  Bird
-2.  McHale
-3.  Parish
-
-It's important to note that the actual numbers you use to mark the
-list have no effect on the HTML output Markdown produces. The HTML
-Markdown produces from the above list is:
-
-If you instead wrote the list in Markdown like this:
-
-1.  Bird
-1.  McHale
-1.  Parish
-
-or even:
-
-3. Bird
-1. McHale
-1. Parish
-
-you'd get the exact same HTML output. The point is, if you want to,
-you can use ordinal numbers in your ordered Markdown lists, so that
-the numbers in your source match the numbers in your published HTML.
-But if you want to be lazy, you don't have to.
-
-To make lists look nice, you can wrap items with hanging indents:
-
-- Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-  Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
-  viverra nec, fringilla in, laoreet vitae, risus.
-- Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
-  Suspendisse id sem consectetuer libero luctus adipiscing.
-
-But if you want to be lazy, you don't have to:
-
-- Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-  Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
-  viverra nec, fringilla in, laoreet vitae, risus.
-- Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
-  Suspendisse id sem consectetuer libero luctus adipiscing.
-
-List items may consist of multiple paragraphs. Each subsequent
-paragraph in a list item must be indented by either 4 spaces
-or one tab:
-
-1.  This is a list item with two paragraphs. Lorem ipsum dolor
-    sit amet, consectetuer adipiscing elit. Aliquam hendrerit
-    mi posuere lectus.
-
-    Vestibulum enim wisi, viverra nec, fringilla in, laoreet
-    vitae, risus. Donec sit amet nisl. Aliquam semper ipsum
-    sit amet velit.
-
-2.  Suspendisse id sem consectetuer libero luctus adipiscing.
-
-It looks nice if you indent every line of the subsequent
-paragraphs, but here again, Markdown will allow you to be
-lazy:
-
-- This is a list item with two paragraphs.
-
-      This is the second paragraph in the list item. You're
-
-  only required to indent the first line. Lorem ipsum dolor
-  sit amet, consectetuer adipiscing elit.
-
-- Another item in the same list.
-
-To put a blockquote within a list item, the blockquote's `>`
-delimiters need to be indented:
-
-- A list item with a blockquote:
-
-  > This is a blockquote
-  > inside a list item.
-
-To put a code block within a list item, the code block needs
-to be indented _twice_ -- 8 spaces or two tabs:
-
-- A list item with a code block:
-
-      <code goes here>
-
-### Code Blocks
-
-Pre-formatted code blocks are used for writing about programming or
-markup source code. Rather than forming normal paragraphs, the lines
-of a code block are interpreted literally. Markdown wraps a code block
-in both `<pre>` and `<code>` tags.
-
-To produce a code block in Markdown, simply indent every line of the
-block by at least 4 spaces or 1 tab.
-
-This is a normal paragraph:
-
-    This is a code block.
-
-Here is an example of AppleScript:
-
-    tell application "Foo"
-        beep
-    end tell
-
-A code block continues until it reaches a line that is not indented
-(or the end of the article).
-
-Within a code block, ampersands (`&`) and angle brackets (`<` and `>`)
-are automatically converted into HTML entities. This makes it very
-easy to include example HTML source code using Markdown -- just paste
-it and indent it, and Markdown will handle the hassle of encoding the
-ampersands and angle brackets. For example, this:
-
-    <div class="footer">
-        &copy; 2004 Foo Corporation
-    </div>
-
-Regular Markdown syntax is not processed within code blocks. E.g.,
-asterisks are just literal asterisks within a code block. This means
-it's also easy to use Markdown to write about Markdown's own syntax.
-
-```
-tell application "Foo"
-    beep
-end tell
-```
-
-## Span Elements
-
-### Links
-
-Markdown supports two style of links: _inline_ and _reference_.
-
-In both styles, the link text is delimited by [square brackets].
-
-To create an inline link, use a set of regular parentheses immediately
-after the link text's closing square bracket. Inside the parentheses,
-put the URL where you want the link to point, along with an _optional_
-title for the link, surrounded in quotes. For example:
-
-This is [an example](http://example.com/) inline link.
-
-[This link](http://example.net/) has no title attribute.
-
-### Emphasis
-
-Markdown treats asterisks (`*`) and underscores (`_`) as indicators of
-emphasis. Text wrapped with one `*` or `_` will be wrapped with an
-HTML `<em>` tag; double `*`'s or `_`'s will be wrapped with an HTML
-`<strong>` tag. E.g., this input:
-
-_single asterisks_
-
-_single underscores_
-
-**double asterisks**
-
-**double underscores**
-
-### Code
-
-To indicate a span of code, wrap it with backtick quotes (`` ` ``).
-Unlike a pre-formatted code block, a code span indicates code within a
-normal paragraph. For example:
-
-Use the `printf()` function.
+When auto layout was released <a href="https://www.figma.com/blog/announcing-auto-layout/" target="_blank">Figma published a blog post</a> which outlines a lot of the core functionality and how this will make designing much simpler. Take a look and give auto layout a go! It might take a bit of getting used to initially but in my opinion its totally worth it.

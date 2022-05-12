@@ -51,7 +51,7 @@ While I don't tend to refer to the Figma layers when actually building a compone
 Lets take a simple card as an example:
 
 <div style='width: 100%; background-color: rgba(255, 255, 255, 0.06); padding: 16px 0; display: flex; justify-content: center'>
-<img src="/img/card-example.svg" alt="Card example"/>
+<img src="/img/figma-autolayout/card-example.svg" alt="Card example"/>
 </div>
 
 Looking at a comparison of the JSX markup to the layers in Figma, there is quite a similarity, bearing in mind that Figma displays layers in reverse order to how they would be marked up in code:
@@ -59,7 +59,7 @@ Looking at a comparison of the JSX markup to the layers in Figma, there is quite
 ### Figma layers
 
 <div style='width: 100%; background-color: rgba(255, 255, 255, 0.06); padding: 16px 0; display: flex; justify-content: center'>
-<img src="/img/figma-layer-example.png" alt="Example of Figma layers" width="50%" />
+<img src="/img/figma-autolayout/figma-layer-example.png" alt="Example of Figma layers" width="50%" />
 </div>
 
 ### JSX Markup

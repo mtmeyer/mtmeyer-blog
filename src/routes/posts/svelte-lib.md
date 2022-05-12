@@ -1,7 +1,7 @@
 ---
-title: How to publish a Svelte component lib with SvelteKit
+title: How to publish a Svelte component library with SvelteKit
 description: SvelteKit makes it super easy to create a library and prepare it for publishing to NPM.
-publishDate: 25 July, 2021
+publishDate: 12 May, 2022
 ---
 
 <script>
@@ -38,9 +38,8 @@ By the end of this post, you'll have a Svelte component published to NPM. As an 
 
 ## Getting started
 
-As with any SvelteKit app you'll first need to generate the project.  Choose `Skeleton project` for the first question in the CLI and continue through the rest selecting your preferred options.
+As with any SvelteKit app you'll first need to generate the project. Choose `Skeleton project` for the first question in the CLI and continue through the rest selecting your preferred options.
 
-<CodeBlock code="npm init svelte@latest <project name here>" language="bash" />
+<img src="/img/svelte-lib/init_svelte_project.svg" alt="npm init svelte@latest <project name here>" />
 
 Once the project is setup we can `cd` into the directory and install dependencies.
-

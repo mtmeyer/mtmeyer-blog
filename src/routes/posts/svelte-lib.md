@@ -40,6 +40,8 @@ By the end of this post, you'll have a Svelte component published to NPM. As an 
 
 As with any SvelteKit app you'll first need to generate the project. Choose `Skeleton project` for the first question in the CLI and continue through the rest selecting your preferred options.
 
-<img src="/img/svelte-lib/init_svelte_project.svg" alt="npm init svelte@latest <project name here>" />
+<div style='width: 100%; display: flex; justify-content: center'>
+<img src="/img/svelte-lib/init_svelte_project.svg" alt="npm init svelte@latest <project name here>" width="80%" style='box-shadow: rgba(0, 0, 0, 0.15) 0px 7px 29px 0px;'/>
+</div>
 
 Once the project is setup we can `cd` into the directory and install dependencies.

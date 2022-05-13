@@ -32,7 +32,6 @@
 
 <main>
 	<Header homepage={true} title="Dev Blog" />
-	<h3>Test</h3>
 	<section class="post-wrapper">
 		{#each posts as item}
 			<article>

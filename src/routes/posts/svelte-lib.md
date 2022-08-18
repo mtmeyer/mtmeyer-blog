@@ -2,6 +2,7 @@
 title: How to publish a Svelte component library with SvelteKit
 description: SvelteKit makes it super easy to create a library and prepare it for publishing to NPM.
 publishDate: 12 May, 2022
+published: false
 ---
 
 <script>

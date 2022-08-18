@@ -2,6 +2,7 @@
 title: Figma auto layout makes building react components easier
 description: Since using auto layout in Figma a bunch, I've realised designing everything with it simplifies component creation in React.
 publishDate: 25 July, 2021
+published: true
 ---
 
 <script>

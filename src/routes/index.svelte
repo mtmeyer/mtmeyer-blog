@@ -34,6 +34,7 @@
 	<Header homepage={true} title="Dev Blog" />
 	<section class="post-wrapper">
 		{#each posts as item}
+			{#if item.metadata.published}
 			<article>
 				<a href={item.path} class="preview-wrapper">
 					<time>{item.metadata.publishDate}</time>
@@ -41,6 +42,7 @@
 					<p>{item.metadata.description}</p>
 				</a>
 			</article>
+			{/if}
 		{/each}
 	</section>
 </main>

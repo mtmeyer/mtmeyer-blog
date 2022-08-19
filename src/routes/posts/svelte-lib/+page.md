@@ -7,8 +7,6 @@ published: false
 
 <script>
   import Header from '../../components/Header.svelte';
-
-  import CodeBlock from '../../components/CodeBlock.svelte';
   
 </script>
 

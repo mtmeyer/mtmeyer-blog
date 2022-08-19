@@ -1,29 +1,6 @@
-<script context="module">
-	import Header from '../components/Header.svelte';
-	const allPosts = import.meta.glob('./posts/*.md');
-
-	let body = [];
-	for (let path in allPosts) {
-		body.push(
-			allPosts[path]().then(({ metadata }) => {
-				return { path: path.replace('.md', ''), metadata };
-			})
-		);
-	}
-
-	export const load = async () => {
-		const posts = await Promise.all(body);
-
-		return {
-			props: {
-				posts
-			}
-		};
-	};
-</script>
-
 <script>
-	export let posts;
+	import Header from '../components/Header.svelte';
+	export let data;
 </script>
 
 <svelte:head>
@@ -33,7 +10,7 @@
 <main>
 	<Header homepage={true} title="Dev Blog" />
 	<section class="post-wrapper">
-		{#each posts as item}
+		{#each data.posts as item}
 			{#if item.metadata.published}
 				<article>
 					<a href={item.path} class="preview-wrapper">

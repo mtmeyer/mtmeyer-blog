@@ -2,6 +2,8 @@
 	import Header from '../components/Header.svelte';
 	import ReadMoreLink from '../components/ReadMoreLink.svelte';
 	export let data;
+
+	$: readMoreArrowFill = '#ffffff';
 </script>
 
 <svelte:head>
@@ -14,11 +16,16 @@
 		{#each data.posts as item}
 			{#if item.metadata.published}
 				<article>
-					<a href={item.path} class="preview-wrapper">
+					<a
+						href={item.path}
+						class="preview-wrapper"
+						on:mouseenter={() => (readMoreArrowFill = '#fc7373')}
+						on:mouseleave={() => (readMoreArrowFill = '#ffffff')}
+					>
 						<time>{item.metadata.publishDate}</time>
 						<h2>{item.metadata.title}</h2>
 						<p>{item.metadata.description}</p>
-						<ReadMoreLink link={item.path} />
+						<ReadMoreLink link={item.path} arrowFill={readMoreArrowFill} />
 					</a>
 				</article>
 			{/if}
@@ -34,10 +41,12 @@
 	.preview-wrapper {
 		color: #ffffff;
 		text-decoration: none;
+		display: flex;
+		flex-direction: column;
 		time {
 			font-size: 14px;
 			font-family: var(--font);
-			padding-bottom: 4px;
+			margin-bottom: 8px;
 			color: #bbbbbb;
 		}
 

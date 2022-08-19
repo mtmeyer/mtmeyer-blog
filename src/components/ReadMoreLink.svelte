@@ -3,14 +3,10 @@
 	import ChevronIcon from './ChevronIcon.svelte';
 	export let link;
 
-	$: arrowFill = '#ffffff';
+	export let arrowFill = '#ffffff';
 </script>
 
-<a
-	href={link}
-	on:mouseenter={() => (arrowFill = '#fc7373')}
-	on:mouseleave={() => (arrowFill = '#ffffff')}
->
+<a href={link}>
 	<span>Read more</span>
 	<div class="icon-wrapper">
 		<ArrowIcon width={16} height={16} fill={arrowFill} />
@@ -76,9 +72,4 @@
 		display: flex;
 		align-items: center;
 	}
-
-	/* .icon-wrapper {
-		opacity: 0;
-		transition: opacity 0.2s;
-	} */
 </style>

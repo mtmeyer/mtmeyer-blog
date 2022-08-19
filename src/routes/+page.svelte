@@ -1,5 +1,6 @@
 <script>
 	import Header from '../components/Header.svelte';
+	import ReadMoreLink from '../components/ReadMoreLink.svelte';
 	export let data;
 </script>
 
@@ -17,6 +18,7 @@
 						<time>{item.metadata.publishDate}</time>
 						<h2>{item.metadata.title}</h2>
 						<p>{item.metadata.description}</p>
+						<ReadMoreLink link={item.path} />
 					</a>
 				</article>
 			{/if}
@@ -33,8 +35,10 @@
 		color: #ffffff;
 		text-decoration: none;
 		time {
-			font-size: 12px;
+			font-size: 14px;
 			font-family: var(--font);
+			padding-bottom: 4px;
+			color: #bbbbbb;
 		}
 
 		p {

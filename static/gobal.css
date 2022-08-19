@@ -6,8 +6,6 @@
 body {
 	background-color: #1e1f28;
 	color: #ffffff;
-	background-image: url('/background-image.svg');
-	background-attachment: fixed;
 	display: flex;
 	justify-content: center;
 	width: calc(100% - 48px);

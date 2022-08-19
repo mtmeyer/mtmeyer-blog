@@ -18,7 +18,7 @@
 		"eslint": "^7.22.0",
 		"eslint-config-prettier": "^8.1.0",
 		"eslint-plugin-svelte3": "^3.2.0",
-		"mdsvex": "^0.10.5",
+		"mdsvex": "^0.10.6",
 		"prettier": "~2.2.1",
 		"prettier-plugin-svelte": "^2.2.0",
 		"sass": "^1.35.2",
@@ -30,8 +30,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"prism-svelte": "^0.4.7",
-		"prism-svelte-renderer": "^0.0.2",
-		"prismjs": "^1.24.1"
+		"prism-themes": "^1.9.0"
 	}
 }

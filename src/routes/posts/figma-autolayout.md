@@ -7,8 +7,8 @@ published: true
 
 <script>
   import Header from '../../components/Header.svelte';
-
-  import CodeBlock from '../../components/CodeBlock.svelte';
+  import "prism-themes/themes/prism-one-dark.min.css"
+  // import CodeBlock from '../../components/CodeBlock.svelte';
 
   let testCode = `
 
@@ -59,13 +59,28 @@ Looking at a comparison of the JSX markup to the layers in Figma, there is quite
 
 ### Figma layers
 
-<div style='width: 100%; background-color: rgba(255, 255, 255, 0.06); padding: 16px 0; display: flex; justify-content: center'>
+<div style='width: 100%; background-color: rgba(255, 255, 255, 0.06); padding: 16px 0; display: flex; justify-content: center; margin-bottom: 24px;'>
 <img src="/img/figma-autolayout/figma-layer-example.png" alt="Example of Figma layers" width="50%" />
 </div>
 
 ### JSX Markup
 
-<CodeBlock code={testCode} language="html" />
+```html
+<div className="card-wrapper">
+	<div className="header">
+		<h1>Card Heading</h1>
+		<img src="chevron.svg" />
+	</div>
+	<p>Description</p>
+	<div className="metadata">
+		<div className="author">
+			<img src="avatar-image.svg" />
+			<p>Joanna Smith</p>
+		</div>
+		<time>3:10pm</time>
+	</div>
+</div>
+```
 
 ---
 

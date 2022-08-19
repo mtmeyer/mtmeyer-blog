@@ -1,3 +1,8 @@
+:root {
+	--font-body: 'Atkinson Hyperlegible', sans-serif;
+	--font-heading: 'DM Sans', sans-serif;
+}
+
 body {
 	background-color: #1e1f28;
 	color: #ffffff;
@@ -6,20 +11,36 @@ body {
 	display: flex;
 	justify-content: center;
 	width: calc(100% - 48px);
-	font-family: 'Source Serif Pro', serif;
+	font-family: var(--font-body);
 	padding: 0 24px;
 	margin: 0;
 	padding-bottom: 64px;
 }
 
 .svelte-wrapper {
-	width: 650px;
+	width: 700px;
 }
 
 h1 {
-	font-family: 'Catamaran', sans-serif;
+	font-family: var(--font-heading);
 	font-size: 42px;
 	line-height: 52px;
+}
+
+h2 {
+			font-family: var(--font-heading);
+			font-size: 28px;
+			margin: 0;
+			line-height: 32px;
+			margin-bottom: 8px;
+}
+
+h3 {
+			font-family: var(--font-heading);
+			font-size: 18px;
+			margin: 0;
+			line-height: 24px;
+			margin-bottom: 8px;
 }
 
 a {
@@ -36,8 +57,8 @@ ul,
 ol {
 	font-weight: 400;
 	color: rgba(255, 255, 255, 0.85);
-	font-size: 16px;
-	line-height: 24px;
+	font-size: 18px;
+	line-height: 28px;
 }
 
 p {

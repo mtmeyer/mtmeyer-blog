@@ -35,13 +35,13 @@
 	<section class="post-wrapper">
 		{#each posts as item}
 			{#if item.metadata.published}
-			<article>
-				<a href={item.path} class="preview-wrapper">
-					<time>{item.metadata.publishDate}</time>
-					<h2>{item.metadata.title}</h2>
-					<p>{item.metadata.description}</p>
-				</a>
-			</article>
+				<article>
+					<a href={item.path} class="preview-wrapper">
+						<time>{item.metadata.publishDate}</time>
+						<h2>{item.metadata.title}</h2>
+						<p>{item.metadata.description}</p>
+					</a>
+				</article>
 			{/if}
 		{/each}
 	</section>
@@ -57,15 +57,7 @@
 		text-decoration: none;
 		time {
 			font-size: 12px;
-			font-family: 'Catamaran', sans-serif;
-		}
-
-		h2 {
-			font-family: 'Catamaran', sans-serif;
-			font-size: 32px;
-			margin: 0;
-			line-height: 42px;
-			margin-bottom: 8px;
+			font-family: var(--font);
 		}
 
 		p {

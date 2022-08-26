@@ -3,7 +3,7 @@
 	import ReadMoreLink from '../components/ReadMoreLink.svelte';
 	export let data;
 
-	$: readMoreArrowFill = '#ffffff';
+	const showUnpublishedArticles = process.env.NODE_ENV === 'development';
 </script>
 
 <svelte:head>
@@ -13,20 +13,15 @@
 <main>
 	<Header homepage={true} title="Dev Blog" />
 	<section class="post-wrapper">
-		{#each data.posts as item}
-			{#if item.metadata.published}
-				<article>
-					<a
-						href={item.path}
-						class="preview-wrapper"
-						on:mouseenter={() => (readMoreArrowFill = '#fc7373')}
-						on:mouseleave={() => (readMoreArrowFill = '#ffffff')}
-					>
-						<time>{item.metadata.publishDate}</time>
+		{#each data.posts as item (item.path)}
+			{#if showUnpublishedArticles || item.metadata.published}
+				<article class="preview-wrapper">
+					<time>{item.metadata.publishDate}</time>
+					<a href={item.path}>
 						<h2>{item.metadata.title}</h2>
 						<p>{item.metadata.description}</p>
-						<ReadMoreLink link={item.path} arrowFill={readMoreArrowFill} />
 					</a>
+					<ReadMoreLink link={item.path} />
 				</article>
 			{/if}
 		{/each}
@@ -39,8 +34,6 @@
 	}
 
 	.preview-wrapper {
-		color: #ffffff;
-		text-decoration: none;
 		display: flex;
 		flex-direction: column;
 		time {
@@ -50,16 +43,25 @@
 			color: #bbbbbb;
 		}
 
-		p {
-			margin-top: 0;
+		h2 {
+			padding-top: 0;
 		}
 
-		&:hover {
-			cursor: pointer;
+		p {
+			margin-top: 0;
+			margin-bottom: 16px;
+		}
 
-			h2 {
-				text-decoration: underline;
-			}
+		a {
+			color: #ffffff;
+			text-decoration: none;
+		}
+	}
+	.preview-wrapper a:hover {
+		cursor: pointer;
+
+		h2 {
+			text-decoration: underline;
 		}
 	}
 </style>
